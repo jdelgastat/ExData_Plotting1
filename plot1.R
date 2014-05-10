@@ -2,7 +2,7 @@ epc <- read.table(file="household_power_consumption.txt", header=TRUE, sep=";", 
 GAP1 <- subset(epc, select = Global_active_power, subset = (Date == "1/2/2007"))
 GAP2 <- subset(epc, select = Global_active_power, subset = (Date == "2/2/2007"))
 GAP12 <- rbind(GAP1, GAP2)
-GAP <- as.numeric(GAP12[,1])
+GAP <- as.numeric(as.character(GAP12[,1]))
 hist(GAP, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red" )
 dev.copy(png, file = "plot1.png")
 dev.off()
